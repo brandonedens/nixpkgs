@@ -5445,6 +5445,8 @@ let
 
   csslint = callPackage ../development/web/csslint { };
 
+  wt = callPackage ../development/web/wt { };
+
   libcxx = llvmPackages.libcxx;
   libcxxabi = llvmPackages.libcxxabi;
 
