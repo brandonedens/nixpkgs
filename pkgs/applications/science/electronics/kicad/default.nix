@@ -1,19 +1,19 @@
 { stdenv, fetchurl, fetchbzr, cmake, mesa, wxGTK, zlib, libX11, gettext }:
 
 stdenv.mkDerivation rec {
-  name = "kicad-20131025";
+  name = "kicad-4.0";
 
   src = fetchbzr {
-    url = "https://code.launchpad.net/kicad/stable";
-    rev = 4024;
+    url = "https://code.launchpad.net/kicad/4.0";
+    rev = 6188;
     sha256 = "1sv1l2zpbn6439ccz50p05hvqg6j551aqra551wck9h3929ghly5";
   };
 
-  srcLibrary = fetchbzr {
-    url = "http://bazaar.launchpad.net/~kicad-product-committers/kicad/library";
-    rev = 293;
-    sha256 = "1wn9a4nhqyjzzfkq6xm7ag8n5n10xy7gkq6i7yry7wxini7pzv1i";
-  };
+  #srcLibrary = fetchbzr {
+  #  url = "http://bazaar.launchpad.net/~kicad-product-committers/kicad/library";
+  #  rev = 293;
+  #  sha256 = "1wn9a4nhqyjzzfkq6xm7ag8n5n10xy7gkq6i7yry7wxini7pzv1i";
+  #};
 
   cmakeFlags = "-DKICAD_STABLE_VERSION=ON";
 
