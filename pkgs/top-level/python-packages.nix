@@ -141,6 +141,8 @@ let
 
   pycrypto = callPackage ../development/python-modules/pycrypto { };
 
+  pyelftools = callPackage ../development/python-modules/pyelftools { };
+
   pygobject = callPackage ../development/python-modules/pygobject { };
 
   pygobject3 = callPackage ../development/python-modules/pygobject/3.nix { };
