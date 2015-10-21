@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, ninja, python3 }:
+{ stdenv, fetchurl, ninja, pkgconfig, python3, zlib }:
 
 stdenv.mkDerivation rec {
   name = "meson-0.26.0";
@@ -8,7 +8,12 @@ stdenv.mkDerivation rec {
     sha256 = "1hmfn1bkxnwsnlhw6x9ryfcm4zwsf2w7h51cll1xrxg1rq08fvck";
   };
 
-  buildInputs = [ ninja python3 ];
+  buildInputs = [ ninja pkgconfig python3 zlib ];
+  doCheck = true;
+
+  checkPhase = ''
+    ./run_tests.py
+  '';
 
   installPhase = ''
     ./install_meson.py --prefix=$out --destdir="$pkgdir/"
